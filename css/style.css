@@ -1,0 +1,368 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #888;
+  background: #171616;
+}
+
+.add-terminology button {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.deleted {
+  position: relative;
+  overflow: hidden;
+}
+
+.deleted:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #f00;
+  width: 0;
+  -webkit-animation: delete .5s linear;
+          animation: delete .5s linear;
+  -webkit-animation-timing-function: steps(10);
+          animation-timing-function: steps(10);
+}
+
+@-webkit-keyframes delete {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
+
+@keyframes delete {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #1bb8ff;
+}
+
+button:focus {
+  outline: 0;
+}
+
+hr {
+  margin: 30px 0;
+  border-color: #ccc5;
+}
+
+.delete {
+  border: 1px solid #e4020266;
+  padding: 3px 5px;
+  border-radius: 5px;
+  background: #f007;
+  color: #cccbcb;
+  font-size: 12px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  margin: 0 -15px;
+}
+
+main h1 {
+  font-size: 2rem;
+  border-left: 5px solid;
+  padding-left: 10px;
+  color: #F44336;
+  margin: 30px 0;
+  -webkit-text-stroke: #b90d00;
+  -webkit-text-stroke-width: thin;
+  font-weight: 500;
+  letter-spacing: 11px;
+  text-transform: uppercase;
+}
+
+.terminology {
+  overflow: hidden;
+  position: relative;
+}
+
+.terminology .terminology-show {
+  margin-bottom: 20px;
+  color: #797979;
+  background: #0606062e;
+  padding: 10px;
+  border: 1px solid #0e0e0e3b;
+}
+
+.terminology .terminology-show button {
+  padding: 2px 5px;
+  font-size: 14px;
+  border: none;
+  border-radius: 2px;
+  margin: 0 2px;
+  cursor: pointer;
+  background: #1d1c1c;
+  color: #c3c3c3;
+}
+
+.terminology .terminology-show button:focus {
+  outline: 0;
+}
+
+.terminology .terminology-show button.active {
+  background: #ec3a1d;
+  color: #fff;
+  cursor: no-drop;
+}
+
+.terminology .terminology-list.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.terminology .terminology-list.cards .box {
+  padding: 15px;
+  text-align: center;
+  background: #1d1c1c;
+  overflow: hidden;
+  border: 1px solid #141313;
+  min-width: 200px;
+  max-height: 200px;
+  max-width: 50%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.terminology .terminology-list.cards .box .title {
+  text-transform: capitalize;
+  color: #d4d1d1;
+}
+
+.terminology .terminology-list.cards .box .description {
+  padding: 10px 0;
+  margin: 10px 0;
+  border: inherit;
+  border-left: none;
+  border-right: none;
+  max-height: 100px;
+  overflow: auto;
+  font-size: 14px;
+}
+
+.terminology .terminology-list.cards .box .link {
+  font-size: 13px;
+  float: left;
+  margin-top: 2px;
+}
+
+.terminology .terminology-list.cards .box .delete {
+  float: right;
+}
+
+.terminology .terminology-list.table .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #0e0e0e;
+  padding: 8px 10px;
+  background: #1d1c1c;
+}
+
+.terminology .terminology-list.table .box .title {
+  color: #d4d1d1;
+  min-width: 120px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+@media (max-width: 700px) {
+  .terminology .terminology-list.table .box .title {
+    min-width: unset;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
+.terminology .terminology-list.table .box .description {
+  margin: 0 10px;
+  border: inherit;
+  border-top: none;
+  border-bottom: none;
+  padding: 0 10px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 14px;
+}
+
+.terminology .terminology-list.table .box .link {
+  display: block;
+  min-width: 170px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  word-break: break-all;
+  font-size: 13px;
+  font-style: italic;
+}
+
+@media (max-width: 500px) {
+  .terminology .terminology-list.table .box .link {
+    width: unset;
+    min-width: 100px;
+  }
+}
+
+.add-terminology {
+  margin-bottom: 30px;
+  overflow: hidden;
+  background: #0606062e;
+  padding: 10px;
+  border: 1px solid #0e0e0e3b;
+}
+
+.add-terminology .flex {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: 35px;
+}
+
+@media (max-width: 767px) {
+  .add-terminology .flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: unset;
+  }
+}
+
+.add-terminology input, .add-terminology textarea {
+  border: none;
+  border-bottom: 2px solid #383838;
+  background: #27272778;
+  padding-left: 7px;
+  color: #888;
+}
+
+.add-terminology input:focus, .add-terminology textarea:focus {
+  outline: 0;
+  border-color: #2196F3;
+}
+
+.add-terminology input.err, .add-terminology textarea.err {
+  border-color: #e81a1a;
+  color: #e81a1a;
+}
+
+.add-terminology input.err::-webkit-input-placeholder, .add-terminology textarea.err::-webkit-input-placeholder {
+  color: #e81a1a;
+}
+
+.add-terminology input.err:-ms-input-placeholder, .add-terminology textarea.err:-ms-input-placeholder {
+  color: #e81a1a;
+}
+
+.add-terminology input.err::-ms-input-placeholder, .add-terminology textarea.err::-ms-input-placeholder {
+  color: #e81a1a;
+}
+
+.add-terminology input.err::placeholder, .add-terminology textarea.err::placeholder {
+  color: #e81a1a;
+}
+
+.add-terminology input:last-of-type, .add-terminology textarea:last-of-type {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+@media (max-width: 767px) {
+  .add-terminology input, .add-terminology textarea {
+    min-height: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+.add-terminology .flex-1 {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  margin: 0 10px;
+}
+
+@media (max-width: 767px) {
+  .add-terminology .flex-1 {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.add-terminology button {
+  margin-left: 5px;
+  border-radius: 3px;
+  padding: 5px 20px;
+  cursor: pointer;
+  background: #ec3a1d;
+  color: #eeeeee;
+  border: 1px solid transparent;
+}
+
+@media (max-width: 767px) {
+  .add-terminology button {
+    margin-left: 0;
+  }
+}
+
+.add-terminology button:hover {
+  border: 1px solid #ec3a1d;
+  background: none;
+  color: #ec3a1d;
+}
+/*# sourceMappingURL=style.css.map */

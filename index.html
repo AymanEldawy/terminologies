@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Terminology</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <main>
+      <h1>Terminology</h1>
+    </main>
+    <form class="add-terminology">
+      <h3>Add terminology </h3>
+      <div class="flex">
+        <input onkeyup="validInput(event)" id="title" type="text" placeholder="Title">
+        <input onkeyup="validInput(event)" id="description" class="flex-1" type="text" placeholder="Description">
+        <input onkeyup="validInput(event)" id="link" type="text" placeholder="source">
+        <button onclick="addTerminology()" type="button" id="submit">Save</button>
+      </div>
+    </form>
+    <section class="terminology">
+      <div class="terminology-show">
+        Show as :
+        <button class="show-cards" >List</button>
+        <button class="show-table active" >Table</button>
+      </div>
+      <div class="terminology-list table">
+        
+      </div>
+  </div>
+  </section>
+
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
